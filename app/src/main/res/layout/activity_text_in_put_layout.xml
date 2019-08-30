@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activitys.TextInPutLayoutActivity">
+    <include layout="@layout/common_toolbar_layout"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_textlayout_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:errorEnabled="true"
+            app:boxBackgroundMode="outline"
+            android:hint="username"
+            android:theme="@style/TextInputLayoutStyle"
+            app:hintTextColor="@color/blue"
+            app:boxStrokeColor="@color/inputlayout_stroke_selected"
+            app:boxCornerRadiusBottomStart="6dp"
+            app:boxCornerRadiusBottomEnd="6dp"
+            app:counterTextColor="@color/blue"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_parent_ly">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_edit_name"
+                android:layout_width="match_parent"
+                android:inputType="text"
+                android:textColor="@color/blue"
+                android:backgroundTint="@color/transparent"
+                android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_textlayout_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:counterMaxLength="20"
+            app:errorEnabled="true"
+            app:passwordToggleEnabled="true"
+            android:background="@color/transparent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_textlayout_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_edit_password"
+                android:layout_width="match_parent"
+                android:background="@color/transparent"
+                android:textColor="@color/blue"
+                android:inputType="textPassword"
+                android:hint="@string/edittext_password_hint_str"
+                android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+            android:id="@+id/loading_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="load"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_textlayout_password"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

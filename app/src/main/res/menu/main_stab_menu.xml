@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/stab_material"
+          android:icon="@drawable/ic_looks_one_white_48dp"
+          android:title="@string/tab_material_str"/>
+    <item android:id="@+id/stab_material2"
+          android:icon="@drawable/ic_looks_two_black_48dp"
+          android:title="@string/tab_material2_str"/>
+    <item android:id="@+id/stab_material3"
+          android:icon="@drawable/ic_looks_3_black_48dp"
+          android:title="@string/tab_material3_str"/>
+    <item android:id="@+id/stab_material4"
+          android:icon="@drawable/ic_looks_4_black_48dp"
+          android:title="@string/tab_material4_str"/>
+
+</menu>

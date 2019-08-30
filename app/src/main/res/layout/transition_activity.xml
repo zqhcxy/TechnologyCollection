@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include layout="@layout/common_toolbar_layout"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/transition_explode_btn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_parent_ly"
+            android:layout_marginTop="16dp"
+            app:layout_constraintRight_toLeftOf="@+id/transition_slide_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/explode_str"/>
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/transition_slide_btn"
+            app:layout_constraintLeft_toRightOf="@+id/transition_explode_btn"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_parent_ly"
+            android:layout_marginTop="16dp"
+            app:layout_constraintRight_toLeftOf="@+id/transition_fade_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slide_str"/>
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/transition_fade_btn"
+            app:layout_constraintLeft_toRightOf="@+id/transition_slide_btn"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_parent_ly"
+            android:layout_marginTop="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fade_str"/>
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/transition_sharedElement_btn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/transition_slide_btn"
+            android:layout_marginTop="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="@string/share_element_str"/>
+    <ImageView
+            android:id="@+id/transition_shared_img"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/transition_sharedElement_btn"
+            android:layout_marginTop="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:src="@mipmap/pic1"
+            android:scaleType="centerCrop"
+            android:layout_height="108dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--<item name="colorPrimaryDark">@color/transparent</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+
+        <!--<item name="colorControlNormal">#c5c5c5</item>-->
+        <!--<item name="colorControlActivated">@color/blue</item>-->
+        <!--<item name="colorControlHighlight">@android:color/holo_red_light</item>-->
+        <!-- 代表 hint 的颜色 -->
+        <!--<item name="android:textColorHint">#ff6f7272</item>-->
+        <!--&lt;!&ndash; 代表 下划线没有获取焦点的颜色 的颜色 &ndash;&gt;-->
+        <!--<item name="colorControlNormal">#ffd8d8d8</item>-->
+        <!--&lt;!&ndash; 代表 代表了获取焦点的时候 下划线 的颜色 &ndash;&gt;-->
+        <!--<item name="colorControlActivated">#ff3586fe</item>-->
+        <!--&lt;!&ndash; 代表 代表了点击的时候 下划线 的颜色 &ndash;&gt;-->
+        <!--<item name="colorControlHighlight">#ff3586fe</item>-->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <!--<style name="TextInputStyle" >-->
+        <!--<item name="colorControlNormal">@color/light_gray</item>&lt;!&ndash;默认显示下划线的颜色&ndash;&gt;-->
+        <!--<item name="colorControlActivated">@color/blue</item>&lt;!&ndash;点击后下划线的颜色&ndash;&gt;-->
+    <!--</style>-->
+
+    <!--Theme.MaterialComponents.Light.NoActionBar-->
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!--<item name="colorPrimary">@color/blue</item>-->
+        <!--<item name="colorControlNormal">@color/colorAccent</item>-->
+        <item name="colorControlActivated">@color/blue</item>
+        <!--<item name="boxStrokeWidth">2dp</item>-->
+    </style>
+
+
+    <style name="StoreToolbarStyle" parent="Base.Widget.AppCompat.Toolbar">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+    </style>
+
+
+</resources>

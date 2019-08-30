@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--这是个奇葩的问题，必须这样的顺序才有效-->
+    <item android:color="@color/colorAccent" android:state_active="true"/>
+    <item android:color="@color/blue" android:state_active="false"/>
+
+</selector>
