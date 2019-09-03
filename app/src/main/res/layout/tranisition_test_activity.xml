@@ -20,7 +20,7 @@
             android:scaleType="centerCrop"
             android:layout_width="0dp"
             android:layout_height="108dp"
-    android:transitionName="imageview"/>
+            android:transitionName="image_tranisition"/>
 
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/transition_ts_btn1"
@@ -31,6 +31,6 @@
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-    android:transitionName="button"/>
+            android:transitionName="button"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
