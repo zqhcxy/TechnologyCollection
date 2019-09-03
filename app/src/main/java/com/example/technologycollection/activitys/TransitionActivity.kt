@@ -178,7 +178,7 @@ class TransitionActivity : BaseCommonActivity(), View.OnClickListener {
         var inflater: LayoutInflater
         var list: List<String>
 
-        var mItemViews=LinkedHashMap<String,View>()
+//        var mItemViews=LinkedHashMap<String,View>()
 
         constructor(cnt: Context?, list: List<String>) : super() {
             context = cnt!!
@@ -203,12 +203,12 @@ class TransitionActivity : BaseCommonActivity(), View.OnClickListener {
             holder.itemView.transition_recy_item_tv.setOnClickListener {
                 mInf.onItemClick(it)
             }
-            mItemViews.put(transitionName,holder.itemView.transition_recy_item_tv)
+//            mItemViews.put(transitionName,holder.itemView.transition_recy_item_tv)
         }
 
-        fun getTransitionView(key:String): View? {
-            return mItemViews.get(key)
-        }
+//        fun getTransitionView(key:String): View? {
+//            return mItemViews.get(key)
+//        }
 
         lateinit var mInf:Adapterinf
 
