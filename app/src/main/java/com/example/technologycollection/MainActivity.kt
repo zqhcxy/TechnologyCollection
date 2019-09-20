@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.example.technologycollection.Utils.ActivityAndFragmentInterface
 import com.example.technologycollection.fragmnets.MetatialComponentFragment
+import com.example.technologycollection.fragmnets.ThirdPartComponentFragment
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
@@ -17,7 +19,8 @@ import com.google.android.material.navigation.NavigationView
  *
  * @author zqh 2019-08-06
  */
-class MainActivity : BaseCommonActivity() {
+class MainActivity : BaseCommonActivity() , ActivityAndFragmentInterface {
+
 
     val TAG:String="MainActivitylog"
 
@@ -42,9 +45,8 @@ class MainActivity : BaseCommonActivity() {
 
     fun initData() {
 
-        toolbar.setTitle("Metarial")
         toolbar.navigationIcon=null
-        var lists: List<Fragment> = arrayListOf(MetatialComponentFragment(), Fragment(), Fragment(), Fragment())
+        val lists: List<Fragment> = arrayListOf(MetatialComponentFragment(this), Fragment(), ThirdPartComponentFragment(this), Fragment())
         mAdapter = MainViewPagerAdapter(supportFragmentManager, lists)
         vp_container.adapter = mAdapter
 
@@ -91,13 +93,18 @@ class MainActivity : BaseCommonActivity() {
         })
     }
 
+
+    override fun updateTitle(title: String) {
+        toolbar.setTitle(title)
+    }
+
     /**
      * 显示那个fragment
      */
     fun showFragmentByPosition(pos: Int) {
         Log.i(TAG,"showFragmentByPosition : "+pos)
         vp_container.currentItem = pos
-        toolbar.setTitle("Metarial $pos")
+//        toolbar.setTitle("Metarial $pos")
         updateItemBadgeView(pos)
     }
 
@@ -165,6 +172,4 @@ class MainActivity : BaseCommonActivity() {
         }
 
     }
-
-
 }

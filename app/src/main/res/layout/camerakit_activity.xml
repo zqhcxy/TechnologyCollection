@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.example.technologycollection.weight.ZoomSeekBarCameraKitView
+            android:id="@+id/camerakit_cv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/camerakit_top_ly"
+            app:layout_constraintBottom_toTopOf="@+id/camerakit_bottom_ly"
+            app:ckFocus="tap"
+            app:ckPinchToZoom="true"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+    <LinearLayout
+            android:id="@+id/camerakit_top_ly"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/blue">
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/camerakit_bottom_ly"
+            android:background="@color/blue"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="200dp">
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+            android:id="@+id/camerakit_pic_tv"
+            android:text="@string/picture_str"
+            android:textColor="@drawable/text_color_whit_black_select"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:background="@drawable/circle_selected"
+            android:layout_marginBottom="160dp"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/camerakit_video_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/camerakit_video_tv"
+            android:text="@string/video_str"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@drawable/text_color_whit_black_select"
+            android:background="@drawable/circle_selected"
+            android:layout_marginBottom="160dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/camerakit_pic_tv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <ImageView
+            android:id="@+id/camerakit_gallery_iv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/camerakit_take_iv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp"
+            android:src="@drawable/ic_gallery"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+    <ImageView
+            android:id="@+id/camerakit_take_iv"
+            app:layout_constraintLeft_toRightOf="@+id/camerakit_gallery_iv"
+            app:layout_constraintRight_toLeftOf="@+id/camerakit_change_iv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp"
+            android:src="@drawable/take_photo_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <ImageView
+            android:id="@+id/camerakit_change_iv"
+            app:layout_constraintLeft_toRightOf="@+id/camerakit_take_iv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp"
+            android:src="@drawable/ic_change_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.technologycollection.BaseCommonActivity
 import com.example.technologycollection.R
 import com.example.technologycollection.fragmnets.MetatialComponentFragment
+import com.example.technologycollection.fragmnets.SimpleStringAdapter
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -39,7 +40,7 @@ class BiliBiliCoordinatorLayoutActivity : BaseCommonActivity() {
             list.add("$i")
         }
         bilibili_rcy.layoutManager = LinearLayoutManager(this)
-        bilibili_rcy.adapter = MetatialComponentFragment.MetarialAdapter(this,list)
+        bilibili_rcy.adapter = SimpleStringAdapter(this,list)
         appbar.addOnOffsetChangedListener(object :AppBarLayout.OnOffsetChangedListener{
             override fun onOffsetChanged(appBarLayout: AppBarLayout?, verticalOffset: Int) {
                 if(verticalOffset == 0){//expend

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.technologycollection.BaseRecyclerView
 import com.example.technologycollection.R
+import com.example.technologycollection.Utils.ActivityAndFragmentInterface
 import com.example.technologycollection.activitys.BiliBiliCoordinatorLayoutActivity
 import com.example.technologycollection.activitys.CoordinatorLayoutActivity
 import com.example.technologycollection.activitys.TextInPutLayoutActivity
@@ -21,10 +22,21 @@ import kotlinx.android.synthetic.main.metarial_recy_item.view.*
 /**
  * Metarial 控件
  */
-class MetatialComponentFragment : Fragment() {
+class MetatialComponentFragment : Fragment {
+
 
     lateinit var mRecyclerView: BaseRecyclerView
-    lateinit var mAdapter: MetarialAdapter
+    lateinit var mAdapter: SimpleStringAdapter
+
+    var mInterface: ActivityAndFragmentInterface?=null
+
+    constructor(){
+
+    }
+
+    constructor(inf:ActivityAndFragmentInterface){
+        mInterface = inf
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -39,11 +51,11 @@ class MetatialComponentFragment : Fragment() {
     }
 
     fun initData() {
-        activity!!.setTitle("components")
+        activity!!.setTitle("Metatial")
 
-        var list = arrayListOf("TextInPutLayout","CoordinatorLayout","CoordinatorLayout-bilibili","Transition")
+        val list = arrayListOf("TextInPutLayout","CoordinatorLayout","CoordinatorLayout-bilibili","Transition")
 
-        mAdapter = MetarialAdapter(context, list)
+        mAdapter = SimpleStringAdapter(context, list)
         mRecyclerView.adapter = mAdapter
         mRecyclerView.layoutManager = LinearLayoutManager(activity)
 
@@ -77,32 +89,32 @@ class MetatialComponentFragment : Fragment() {
     }
 
 
-    class MetarialAdapter : RecyclerView.Adapter<MetarialAdapter.ViewHolder> {
-
-        var context: Context
-        var inflater: LayoutInflater
-        var list: List<String>
-
-        constructor(cnt: Context?, list: List<String>) : super() {
-            context = cnt!!
-            inflater = LayoutInflater.from(cnt)
-            this.list = list
-        }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            return ViewHolder(inflater.inflate(R.layout.metarial_recy_item, parent, false))
-        }
-
-        override fun getItemCount(): Int {
-            return list.size
-        }
-
-        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            holder.itemView.metarial_item_title_tv.text = list.get(position)
-        }
-
-
-        class ViewHolder(item: View) : RecyclerView.ViewHolder(item)
-    }
+//    class MetarialAdapter : RecyclerView.Adapter<MetarialAdapter.ViewHolder> {
+//
+//        var context: Context
+//        var inflater: LayoutInflater
+//        var list: List<String>
+//
+//        constructor(cnt: Context?, list: List<String>) : super() {
+//            context = cnt!!
+//            inflater = LayoutInflater.from(cnt)
+//            this.list = list
+//        }
+//
+//        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+//            return ViewHolder(inflater.inflate(R.layout.metarial_recy_item, parent, false))
+//        }
+//
+//        override fun getItemCount(): Int {
+//            return list.size
+//        }
+//
+//        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+//            holder.itemView.metarial_item_title_tv.text = list.get(position)
+//        }
+//
+//
+//        class ViewHolder(item: View) : RecyclerView.ViewHolder(item)
+//    }
 
 }

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.technologycollection.BaseCommonActivity
 import com.example.technologycollection.R
 import com.example.technologycollection.fragmnets.MetatialComponentFragment
+import com.example.technologycollection.fragmnets.SimpleStringAdapter
 
 /**
  * CoordinatorLayout demo
@@ -32,13 +33,13 @@ class CoordinatorLayoutActivity :BaseCommonActivity() {
     fun initData(){
         setTitle("CoordinatorLayout")
 
-        var list= mutableListOf<String>()
+        val list= mutableListOf<String>()
         for (i in 0 until 20){
             list.add("$i")
         }
 
         coor_rcy.layoutManager = LinearLayoutManager(this)
-        coor_rcy.adapter = MetatialComponentFragment.MetarialAdapter(this,list)
+        coor_rcy.adapter = SimpleStringAdapter(this,list)
     }
 
 
