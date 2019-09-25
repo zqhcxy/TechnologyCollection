@@ -11,31 +11,31 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.technologycollection.BaseRecyclerView
 import com.example.technologycollection.R
-import com.example.technologycollection.Utils.ActivityAndFragmentInterface
-import com.example.technologycollection.activitys.CameraKitActivity
+import com.example.technologycollection.activitys.LifeCyclerActivity
 
 /**
- * third Component
- * @author zqhcxy 2019/09/03
+ * jectpack 官方框架
+ * @author zqhcxy 2019/09/23
  */
-class ThirdPartComponentFragment : Fragment {
+class JectpackFragment : Fragment {
+
 
     lateinit var mRecyclerView: BaseRecyclerView
     lateinit var mAdapter: SimpleStringAdapter
-
-    var mInterface: ActivityAndFragmentInterface? = null
 
     constructor() {
 
     }
 
-    constructor(inf: ActivityAndFragmentInterface) {
-        mInterface = inf
-    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
-        val view: View = LayoutInflater.from(activity).inflate(R.layout.third_party_component_layout, container, false)
+        val view: View = LayoutInflater.from(activity)
+            .inflate(R.layout.third_party_component_layout, container, false)
         initView(view)
         initData()
         return view
@@ -47,11 +47,8 @@ class ThirdPartComponentFragment : Fragment {
     }
 
     fun initData() {
-//        activity!!.setTitle("ThirdPartComponent")
-//        mInterface?.updateTitle("ThirdPartComponent")
-
         mRecyclerView.layoutManager = LinearLayoutManager(activity)
-        val list = arrayListOf("Camera Kit")
+        val list = arrayListOf("LifeCycle")
 
         mAdapter = SimpleStringAdapter(context, list)
         mRecyclerView.adapter = mAdapter
@@ -64,9 +61,13 @@ class ThirdPartComponentFragment : Fragment {
             ) {
                 when (position) {
                     0 -> {
-                        val intent = Intent(activity, CameraKitActivity::class.java)
-                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(activity).toBundle())
+                        val intent = Intent(activity, LifeCyclerActivity::class.java)
+                        startActivity(
+                            intent,
+                            ActivityOptions.makeSceneTransitionAnimation(activity).toBundle()
+                        )
                     }
+
                 }
 
             }
@@ -84,5 +85,6 @@ class ThirdPartComponentFragment : Fragment {
 
 
     }
+
 
 }

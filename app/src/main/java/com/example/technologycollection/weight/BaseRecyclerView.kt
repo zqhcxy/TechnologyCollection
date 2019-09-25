@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 
-lateinit var clickListener: BaseRecyclerView.ItemOnClickListener
+
 
 /**
  * 自定义，实现Recyclerview 的onItemclickListener，类似ListView的实现
@@ -16,7 +16,7 @@ lateinit var clickListener: BaseRecyclerView.ItemOnClickListener
  */
 open class BaseRecyclerView : RecyclerView {
 
-
+    lateinit var clickListener: BaseRecyclerView.ItemOnClickListener
     var mTouchFrame: Rect? = null
     var mGestureDetector: GestureDetector? = null
 
@@ -62,6 +62,14 @@ open class BaseRecyclerView : RecyclerView {
         return AdapterView.INVALID_POSITION
     }
 
+    fun itemclick(child:View){
+        clickListener.onItemClick(child,getChildAdapterPosition(child), getAdapter()!!)
+    }
+
+    fun itemLongclick(child:View){
+        clickListener.onItemLongClick(child, getChildAdapterPosition(child),getAdapter()!!)
+    }
+
     class GestureDetectorListener(val parentview: BaseRecyclerView) : GestureDetector.OnGestureListener {
         val INVALID_POSITION = -1
 
@@ -78,7 +86,8 @@ open class BaseRecyclerView : RecyclerView {
                 try {
                     //'获取索引位置的表项，通过接口传递出去'
                     val child = parentview.getChildAt(position)
-                        clickListener.onItemClick(child, parentview.getChildAdapterPosition(child), parentview.getAdapter()!!)
+                    parentview.itemclick(child)
+
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -109,7 +118,7 @@ open class BaseRecyclerView : RecyclerView {
                     //'获取索引位置的表项，通过接口传递出去'
                     val child = parentview.getChildAt(position)
 //                    if (clickListener != null) {
-                        clickListener.onItemLongClick(child, parentview.getChildAdapterPosition(child), parentview.getAdapter()!!)
+                       parentview.itemLongclick(child)
 //                    }
                 } catch (e: Exception) {
                     e.printStackTrace()

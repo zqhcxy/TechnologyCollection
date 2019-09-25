@@ -51,7 +51,7 @@ class MetatialComponentFragment : Fragment {
     }
 
     fun initData() {
-        activity!!.setTitle("Metatial")
+//        activity!!.setTitle("Metatial")
 
         val list = arrayListOf("TextInPutLayout","CoordinatorLayout","CoordinatorLayout-bilibili","Transition")
 

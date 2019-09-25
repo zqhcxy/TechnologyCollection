@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.technologycollection.Utils.ActivityAndFragmentInterface
+import com.example.technologycollection.fragmnets.JectpackFragment
 import com.example.technologycollection.fragmnets.MetatialComponentFragment
 import com.example.technologycollection.fragmnets.ThirdPartComponentFragment
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
@@ -46,7 +47,7 @@ class MainActivity : BaseCommonActivity() , ActivityAndFragmentInterface {
     fun initData() {
 
         toolbar.navigationIcon=null
-        val lists: List<Fragment> = arrayListOf(MetatialComponentFragment(this), Fragment(), ThirdPartComponentFragment(this), Fragment())
+        val lists: List<Fragment> = arrayListOf(MetatialComponentFragment(this), JectpackFragment(), ThirdPartComponentFragment(this), Fragment())
         mAdapter = MainViewPagerAdapter(supportFragmentManager, lists)
         vp_container.adapter = mAdapter
 

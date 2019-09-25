@@ -24,6 +24,8 @@
                   android:screenOrientation="portrait"/>
         <activity android:name=".activitys.LocalMediaActivity"
                   android:screenOrientation="portrait"/>
+        <activity android:name=".activitys.LifeCyclerActivity"
+                android:screenOrientation="portrait"/>
 
         <activity android:name=".MainActivity">
             <intent-filter>

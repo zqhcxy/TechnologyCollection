@@ -6,6 +6,10 @@ import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
+/**
+ * 工具类
+ * @author zqhcxy 2019/09/20
+ */
 object CommonUtil {
 
     fun requestPermission(context: Activity, requestCode:Int){

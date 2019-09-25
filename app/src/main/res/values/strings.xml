@@ -22,4 +22,6 @@
     <string name="picture_str">图片</string>
     <string name="video_str">视频</string>
 
+    <string name="lifecycle_state_hint">lifecycle state</string>
+
 </resources>
