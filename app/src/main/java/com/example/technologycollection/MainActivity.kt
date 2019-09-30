@@ -59,18 +59,19 @@ class MainActivity : BaseCommonActivity() , ActivityAndFragmentInterface {
         bottomNavigationView.setOnNavigationItemSelectedListener(object : NavigationView.OnNavigationItemSelectedListener,
             BottomNavigationView.OnNavigationItemSelectedListener {
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                val title :String = item.title as String
                 when(item.itemId){
                     R.id.stab_material ->{
-                        showFragmentByPosition(0)
+                        showFragmentByPosition(0,title)
                     }
                     R.id.stab_material2 ->{
-                        showFragmentByPosition(1)
+                        showFragmentByPosition(1,title)
                     }
                     R.id.stab_material3 ->{
-                        showFragmentByPosition(2)
+                        showFragmentByPosition(2,title)
                     }
                     R.id.stab_material4 ->{
-                        showFragmentByPosition(3)
+                        showFragmentByPosition(3,title)
                     }
                 }
 
@@ -102,10 +103,10 @@ class MainActivity : BaseCommonActivity() , ActivityAndFragmentInterface {
     /**
      * 显示那个fragment
      */
-    fun showFragmentByPosition(pos: Int) {
+    fun showFragmentByPosition(pos: Int,title:String) {
         Log.i(TAG,"showFragmentByPosition : "+pos)
         vp_container.currentItem = pos
-//        toolbar.setTitle("Metarial $pos")
+        toolbar.setTitle(title)
         updateItemBadgeView(pos)
     }
 

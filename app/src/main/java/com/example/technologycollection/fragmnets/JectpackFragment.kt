@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.technologycollection.BaseRecyclerView
 import com.example.technologycollection.R
+import com.example.technologycollection.activitys.CameraXActivity
 import com.example.technologycollection.activitys.LifeCyclerActivity
 
 /**
@@ -48,7 +49,7 @@ class JectpackFragment : Fragment {
 
     fun initData() {
         mRecyclerView.layoutManager = LinearLayoutManager(activity)
-        val list = arrayListOf("LifeCycle")
+        val list = arrayListOf("LifeCycle","CameraX")
 
         mAdapter = SimpleStringAdapter(context, list)
         mRecyclerView.adapter = mAdapter
@@ -66,6 +67,10 @@ class JectpackFragment : Fragment {
                             intent,
                             ActivityOptions.makeSceneTransitionAnimation(activity).toBundle()
                         )
+                    }
+                    1 ->{
+                        val intent = Intent(activity, CameraXActivity::class.java)
+                        startActivity(intent)
                     }
 
                 }
