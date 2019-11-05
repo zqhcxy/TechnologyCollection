@@ -13,10 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.technologycollection.BaseRecyclerView
 import com.example.technologycollection.R
 import com.example.technologycollection.Utils.ActivityAndFragmentInterface
-import com.example.technologycollection.activitys.BiliBiliCoordinatorLayoutActivity
-import com.example.technologycollection.activitys.CoordinatorLayoutActivity
-import com.example.technologycollection.activitys.TextInPutLayoutActivity
-import com.example.technologycollection.activitys.TransitionActivity
+import com.example.technologycollection.activitys.*
 import kotlinx.android.synthetic.main.metarial_recy_item.view.*
 
 /**
@@ -53,7 +50,7 @@ class MetatialComponentFragment : Fragment {
     fun initData() {
 //        activity!!.setTitle("Metatial")
 
-        val list = arrayListOf("TextInPutLayout","CoordinatorLayout","CoordinatorLayout-bilibili","Transition")
+        val list = arrayListOf("TextInPutLayout","CoordinatorLayout","CoordinatorLayout-bilibili","Transition","Vector Drawable")
 
         mAdapter = SimpleStringAdapter(context, list)
         mRecyclerView.adapter = mAdapter
@@ -78,6 +75,10 @@ class MetatialComponentFragment : Fragment {
                     3->{
                         val transitionIntent = Intent(activity, TransitionActivity::class.java)
                         startActivity(transitionIntent,ActivityOptions.makeSceneTransitionAnimation(activity).toBundle())
+                    }
+                    4 ->{
+                        val vectorIntent = Intent(activity, VectorDrawableActivity::class.java)
+                        startActivity(vectorIntent)
                     }
                 }
             }
