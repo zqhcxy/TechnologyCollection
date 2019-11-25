@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/common_toolbar_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/room_uid_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="uid: "
+        app:layout_constraintBaseline_toBaselineOf="@+id/room_uid_ed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/room_uid_ed"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_parent_ly"/>
+
+
+    <EditText
+        android:id="@+id/room_uid_ed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="uid"
+        app:layout_constraintStart_toStartOf="@+id/room_first_name_ed"
+        app:layout_constraintEnd_toEndOf="@+id/room_first_name_ed"
+        app:layout_constraintLeft_toRightOf="@+id/room_uid_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_parent_ly" />
+
+    <TextView
+        android:id="@+id/room_firstname_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="firstName: "
+        app:layout_constraintBaseline_toBaselineOf="@+id/room_first_name_ed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/room_first_name_ed"
+        app:layout_constraintTop_toBottomOf="@+id/room_uid_ed" />
+
+
+    <EditText
+        android:id="@+id/room_first_name_ed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="first Name"
+        app:layout_constraintLeft_toRightOf="@+id/room_firstname_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/room_uid_ed" />
+
+    <TextView
+        android:id="@+id/room_lastname_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LastName: "
+        app:layout_constraintBaseline_toBaselineOf="@+id/room_last_name_ed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/room_last_name_ed"
+        app:layout_constraintTop_toBottomOf="@+id/room_first_name_ed" />
+
+
+    <EditText
+        android:id="@+id/room_last_name_ed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Last Name"
+        app:layout_constraintLeft_toRightOf="@+id/room_lastname_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/room_first_name_ed" />
+
+
+    <TextView
+        android:id="@+id/room_age_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="age: "
+        app:layout_constraintBaseline_toBaselineOf="@+id/room_age_ed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/room_age_ed"
+        app:layout_constraintTop_toBottomOf="@+id/room_lastname_tv" />
+
+
+    <EditText
+        android:id="@+id/room_age_ed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="age"
+        app:layout_constraintEnd_toEndOf="@+id/room_last_name_ed"
+        app:layout_constraintLeft_toRightOf="@+id/room_age_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/room_last_name_ed"
+        app:layout_constraintTop_toBottomOf="@+id/room_last_name_ed" />
+
+    <Button
+        android:id="@+id/room_insert_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/room_age_ed"
+        app:layout_constraintRight_toLeftOf="@+id/room_update_btn"
+        android:text="Insert"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/room_update_btn"
+        app:layout_constraintLeft_toRightOf="@+id/room_insert_btn"
+        app:layout_constraintTop_toBottomOf="@+id/room_age_ed"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/roo_recy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/room_insert_btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

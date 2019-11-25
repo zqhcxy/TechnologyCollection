@@ -13,6 +13,7 @@ import com.example.technologycollection.BaseRecyclerView
 import com.example.technologycollection.R
 import com.example.technologycollection.activitys.CameraXActivity
 import com.example.technologycollection.activitys.LifeCyclerActivity
+import com.example.technologycollection.activitys.RoomActivity
 
 /**
  * jectpack 官方框架
@@ -49,7 +50,7 @@ class JectpackFragment : Fragment {
 
     fun initData() {
         mRecyclerView.layoutManager = LinearLayoutManager(activity)
-        val list = arrayListOf("LifeCycle","CameraX")
+        val list = arrayListOf("LifeCycle","CameraX","Room")
 
         mAdapter = SimpleStringAdapter(context, list)
         mRecyclerView.adapter = mAdapter
@@ -70,6 +71,10 @@ class JectpackFragment : Fragment {
                     }
                     1 ->{
                         val intent = Intent(activity, CameraXActivity::class.java)
+                        startActivity(intent)
+                    }
+                    2 ->{
+                        val intent =Intent(activity,RoomActivity::class.java)
                         startActivity(intent)
                     }
 
