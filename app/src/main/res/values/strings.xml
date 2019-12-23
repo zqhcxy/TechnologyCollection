@@ -5,7 +5,7 @@
     <string name="tab_material_str">Material</string>
     <string name="tab_material2_str">Jetpack</string>
     <string name="tab_material3_str">Third Component</string>
-    <string name="tab_material4_str">Material4</string>
+    <string name="tab_material4_str">AndroidX</string>
 
     <string name="edittext_name_hint_str">intput your name</string>
     <string name="edittext_password_hint_str">intput your passward</string>

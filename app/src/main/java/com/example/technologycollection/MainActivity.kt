@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.technologycollection.Utils.ActivityAndFragmentInterface
+import com.example.technologycollection.fragmnets.AndroidXNewWeightFragment
 import com.example.technologycollection.fragmnets.JectpackFragment
 import com.example.technologycollection.fragmnets.MetatialComponentFragment
 import com.example.technologycollection.fragmnets.ThirdPartComponentFragment
@@ -47,7 +48,7 @@ class MainActivity : BaseCommonActivity() , ActivityAndFragmentInterface {
     fun initData() {
 
         toolbar.navigationIcon=null
-        val lists: List<Fragment> = arrayListOf(MetatialComponentFragment(this), JectpackFragment(), ThirdPartComponentFragment(this), Fragment())
+        val lists: List<Fragment> = arrayListOf(MetatialComponentFragment(this), JectpackFragment(), ThirdPartComponentFragment(this), AndroidXNewWeightFragment())
         mAdapter = MainViewPagerAdapter(supportFragmentManager, lists)
         vp_container.adapter = mAdapter
 

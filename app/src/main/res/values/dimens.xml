@@ -2,6 +2,8 @@
 <resources>
     <dimen name="tab_size">16sp</dimen>
 
+    <dimen name="viewpage2_horizontal_margin">8sp</dimen>
+    <dimen name="viewpage2_horizontal_page_margin">32sp</dimen>
     <!--下面两行是去掉BottomNavigationView 切换动画-->
     <!--<dimen name="design_bottom_navigation_active_text_size">10sp</dimen>-->
     <!--<dimen name="design_bottom_navigation_text_size">10sp</dimen>-->

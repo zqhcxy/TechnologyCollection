@@ -33,6 +33,12 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".activitys.RoomActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".activitys.ViewPager2Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activitys.SimpleViewPager2Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activitys.Viewpager2FragmentActivity"
+            android:screenOrientation="portrait"/>
 
 
         <activity android:name=".MainActivity">

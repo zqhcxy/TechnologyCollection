@@ -1,4 +1,4 @@
-package com.example.technologycollection.Utils
+package com.example.technologycollection.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -27,7 +27,13 @@ class GridImageAdapter : RecyclerView.Adapter<GridImageAdapter.ViewHolder> {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(inflater.inflate(R.layout.transition_recyclerview_item, parent, false))
+        return ViewHolder(
+            inflater.inflate(
+                R.layout.transition_recyclerview_item,
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int {
